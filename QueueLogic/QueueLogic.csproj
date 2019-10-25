@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A46480F3-37EB-4CD1-981B-2BEDF05F2B47}</ProjectGuid>
+    <ProjectGuid>{E3082201-7C7E-45F0-8770-9155B7397777}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Threadpool_VS</RootNamespace>
-    <AssemblyName>Threadpool-VS</AssemblyName>
+    <RootNamespace>QueueLogic</RootNamespace>
+    <AssemblyName>QueueLogic</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -116,12 +116,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\WriteFileController.cs" />
+    <Compile Include="Controllers\SendMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreadPoolHandlers\ThreadPoolProccess.cs" />
+    <Compile Include="Utilities\MessageQueue.cs" />
+    <Compile Include="Utilities\MessageQueueGetAllRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -152,9 +153,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61143</DevelopmentServerPort>
+          <DevelopmentServerPort>62894</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61143/</IISUrl>
+          <IISUrl>http://localhost:62894/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
