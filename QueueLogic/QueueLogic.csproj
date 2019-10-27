@@ -123,12 +123,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\MessageQueue.cs" />
     <Compile Include="Utilities\MessageQueueGetAllRequest.cs" />
+    <Compile Include="Utilities\QueueResponse.cs" />
+    <Compile Include="Utilities\SupportTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\IIS.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

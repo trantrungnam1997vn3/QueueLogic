@@ -54,8 +54,11 @@ namespace QueueLogic.Utilities
 
         public void TerminateQueue()
         {
-            Monitor.PulseAll(_token);
-            _tokenSource.Cancel();
+            lock (_token)
+            {
+                Monitor.PulseAll(_token);
+                _tokenSource.Cancel();
+            }
         }
     }
 }

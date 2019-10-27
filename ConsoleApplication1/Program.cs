@@ -43,10 +43,10 @@ namespace ConsoleApplication1
 
         }
 
-        public void Produce(Akshay ware)
+        public void Produce(string message)
         {
             ThreadPool.QueueUserWorkItem(
-            new WaitCallback(Consume), ware);
+            new WaitCallback(Consume), message);
             QueueLength++;
         }
 
@@ -54,7 +54,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Thread {0} consumes {1}",
             Thread.CurrentThread.GetHashCode(), //{0}
-            ((Akshay)obj).id); //{1}
+            obj); //{1}
             Thread.Sleep(100);
             QueueLength--;
         }
