@@ -23,16 +23,20 @@ namespace QueueLogic.Controllers
         [HttpGet]
         public string SendMessageWithSyn(int id, string mss)
         {
+            String x = "";
+            int i = 0;
             string result = "";
-            Action<String> a = (message) =>
+
+            Action t = () =>
             {
-                QueueResponse.AddMssResponseToQueue(123, message);
+                
+                x += "Go " + i++;
+                Console.WriteLine("Compute with complex method");
+                Thread.Sleep(1000);
             };
-            MessageQueue<String> messageQueue = new MessageQueue<String>(a);
-            Thread.Sleep(1000);
-            messageQueue.EnqueueAMessage(mss);
-            QueueResponse.GetResultById(123, out result);
-            return result;
+
+            QueueProccess.Sync(t, t, t);
+            return x;
         }
 
         [HttpGet]
